@@ -149,7 +149,7 @@
     <div class="calendar-container">
         <div class="header">
             <button onclick="changeMonth(-1)">❮</button>
-            <h3 id="monthTitle">Maio 2026</h3>
+            <h3 id="monthTitle"></h3>
             <button onclick="changeMonth(1)">❯</button>
         </div>
 
@@ -178,7 +178,10 @@
 
     <script>
         const startDate = new Date(2026, 4, 9); 
-        let currentDisplayDate = new Date(2026, 4, 1);
+        
+        // Inicializa com o mês e ano atuais do dispositivo
+        const agora = new Date();
+        let currentDisplayDate = new Date(agora.getFullYear(), agora.getMonth(), 1);
 
         const feriados = {
             "01-01": "Confraternização Universal",
